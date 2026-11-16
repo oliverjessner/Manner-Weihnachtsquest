@@ -12,6 +12,18 @@ npm start
 
 **http://127.0.0.1:4186/** öffnet den Startbildschirm: „Rette Weihnachten vor langweiligen Geschenken. Mit Manner.“ Er füllt die gesamte **9:16-Spielfläche**. Starte mit **Los geht’s**, **Enter** oder **Leertaste**. Am Handy im selben WLAN: `http://<IP-des-Computers>:4186/`. Anderer Port: `PORT=4187 npm start`. Bilder, Schrift und Sounds benötigen keine externen Laufzeitdienste.
 
+## Netlify
+
+Die Demo lässt sich vollständig statisch hosten; `server.mjs` wird nur für den lokalen Start gebraucht. Der Export benötigt ausschließlich Node.js, keine installierten npm-Pakete:
+
+```sh
+npm run build
+```
+
+Der Befehl erzeugt `dist/` mit HTML, CSS, JavaScript und den lokalen Spielgrafiken/Schriften. Quellhilfen, Tests, Aufnahmen und der lokale Server werden nicht mit ausgeliefert.
+
+Nach Commit und Push der Änderungen in Netlify das GitHub-Repository importieren. Die Datei `netlify.toml` setzt **Build command: `npm run build`** und **Publish directory: `dist`**. Bei manueller Veröffentlichung den erzeugten `dist`-Ordner auf [Netlify Drop](https://app.netlify.com/drop) ziehen. Der Aufnahmemodus funktioniert anschließend unter `https://<deine-site>.netlify.app/?capture=1`.
+
 ## Steuerung und Ablauf
 
 - **← / → oder A / D:** laufen. **Leertaste:** springen. Coyote Time und Jump Buffering verzeihen knapp verspätete bzw. vorgezogene Sprünge.

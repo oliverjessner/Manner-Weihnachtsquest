@@ -63,3 +63,9 @@ Original prompt: Baue „Manner Weihnachtsquest“, ein vollständig spielbares 
 - Auf Wunsch das dauerhafte untere Statuspanel vollständig aus HTML, Zustandsanzeige und CSS entfernt. Rückmeldungen im Spiel erfolgen weiterhin über die bestehenden Pop-ups. Den bisherigen Schlussspruch direkt in den Win-Screen verschoben.
 
 - Ton auf ausdrücklichen Wunsch standardmäßig eingeschaltet. Der Startbutton bzw. Enter/Leertaste aktiviert WebAudio mit einem kurzen Startton innerhalb der Nutzerinteraktion. Lautsprechersymbol, Beschriftung, Seitenhinweis, README und bestehende QA-Startannahme angepasst; Stummschaltung bleibt verfügbar.
+
+## Netlify-Vorbereitung
+
+- Readinessfrage des Users zu Netlify: Die Demo ist statisch; der Node-Server wird nur lokal gebraucht. Explizite Netlify-Konfiguration mit Buildkommando npm run build und Publishordner dist ergänzt. Netlify-Dokumentation zu Build-/Publishverzeichnis und NPM_FLAGS geprüft.
+- Sauberer Stand vor Änderungen: HEAD6f008db(init). Export über Allowlist vorgesehen: nur HTML/CSS/JS und Laufzeitassets/Schriftlizenz, keine Tests/Server/Videoaufnahmen oder Entwicklerhilfen. Kein Commit, Push, Build oder Live-Deploy angefordert/ausgeführt.
+- Statischer Export fertig vorbereitet: scripts/build.mjs, npm run build, dist/. Genau16vorhandeneFrontenddateienaufAllowlist,stagingbasierterSwapmitBackup/Rollback und SchutzvorDist-Symlinks/Fremddateien. Node22fürNetlify,NPM_FLAGS--omit=dev,builtin-onlyBuild. TOMLgeparst,Frontenddateienexistieren,Syntax-undDiffprüfungenbestanden. KeinBuildoderDeployausgeführt.

@@ -1,4 +1,8 @@
 node_modules/
+dist/
+.dist-stage-*/
+.dist-backup-*/
+.netlify/
 output/
 .playwright-mcp/
 .DS_Store

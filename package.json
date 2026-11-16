@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Privater Manner Pixel-Jump-’n’-Run Kampagnenprototyp im Hochformat",
   "scripts": {
+    "build": "node scripts/build.mjs",
     "start": "node server.mjs",
     "test": "node scripts/qa.mjs"
   },
