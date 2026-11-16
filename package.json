@@ -1,15 +1,19 @@
 {
-  "name": "manner-rettet-weihnachten",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "description": "Privater Manner Pixel-Jump-’n’-Run Kampagnenprototyp im Hochformat",
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "start": "node server.mjs",
-    "test": "node scripts/qa.mjs"
-  },
-  "devDependencies": {
-    "playwright": "1.56.1"
-  }
+    "name": "manner-rettet-weihnachten",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "Privater Manner Pixel-Jump-’n’-Run Kampagnenprototyp im Hochformat",
+    "scripts": {
+        "build": "node scripts/build.mjs",
+        "start": "node server.mjs",
+        "test": "node scripts/qa.mjs"
+    },
+    "author": {
+        "name": "oliverjessner",
+        "url": "https://oliverjessner.at"
+    },
+    "devDependencies": {
+        "playwright": "1.56.1"
+    }
 }
