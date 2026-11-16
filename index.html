@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#142b40">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Rette Weihnachten vor langweiligen Geschenken. Ein Pixel-Jump-’n’-Run mit Manner.">
+  <title>Manner rettet Weihnachten</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./game.js"></script>
+</head>
+<body>
+  <main class="app-shell" id="app">
+    <aside class="desktop-note" data-capture-hide>
+      <span class="eyebrow">DIE BESCHERUNG WARTET NICHT</span>
+      <p class="side-title">Zwei Packungen.<br>Eine große Mission.</p>
+      <p>Raus aus der Gasse.<br>Über die Socken.<br>Rette die guten Geschenke.</p>
+      <div class="chapters"><span id="chapter-one" class="active">01 <b>Verschneite Gasse</b></span><span id="chapter-two">02 <b>Der Wäschehof</b></span></div>
+    </aside>
+    <section id="game" class="game-frame" aria-label="Manner rettet Weihnachten, spielbares Jump-’n’-Run">
+      <canvas id="world" width="288" height="512" role="img" aria-label="Verschneite Gasse mit bespringbaren Fenstersimsen, Geschenkpackungen und albernen Gegnern."></canvas>
+      <div class="vignette" aria-hidden="true"></div>
+      <header class="hud">
+        <div class="brand-row"><span class="wordmark">Manner</span><div class="health" id="health" role="status" aria-label="3 von 3 Herzen"><div class="hearts" aria-hidden="true"><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span></div><span id="health-text">3 / 3</span></div><button id="sound-toggle" class="icon-button" aria-label="Retro-Sound ausschalten" aria-pressed="true" data-capture-hide><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4"/><path d="M17 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></svg></button></div>
+        <div class="quest-card"><div class="quest-meta"><span id="scene-name">DEINE WEIHNACHTSMISSION</span><span id="quest-count">0 / 2</span></div><p id="quest-text">Sammle beide Packungen. Rette die Bescherung.</p><div class="route-progress" aria-hidden="true"><i id="route-progress"></i></div></div>
+        <div class="inventory" aria-label="Gesammelte Geschenkpackungen"><div id="inventory-eight" class="inventory-slot"><img src="./assets/products/eight-sprite.png" alt="8er Weihnachtsfest"><span><b>8er</b>Weihnachtsfest</span><i id="eight-check">○</i></div><div id="inventory-eighteen" class="inventory-slot"><img src="./assets/products/eighteen-sprite.png" alt="18er Frohe Weihnachten"><span><b>18er</b>Frohe Weihnachten</span><i id="eighteen-check">○</i></div></div>
+      </header>
+      <div id="pickup-toast" class="pickup-toast" role="status" aria-live="polite" hidden><span id="toast-kicker">GESCHENK GESICHERT</span><p id="toast-text"></p></div>
+      <section id="start-screen" class="start-screen" aria-label="Weihnachtsmission starten">
+        <div class="start-brand"><span class="wordmark">Manner</span><span class="edition">DIE ROSA RETTUNGSMISSION</span></div>
+        <div class="start-heading"><h1>Rette Weihnachten<br>vor langweiligen<br>Geschenken.</h1><p class="start-tagline">Mit Manner.</p></div>
+        <div class="start-products" aria-hidden="true"><span class="start-spark">✦</span><img src="./assets/products/eight-sprite.png" alt=""><span>+</span><img src="./assets/products/eighteen-sprite.png" alt=""><span class="start-spark">✦</span></div>
+        <div class="start-intro"><p class="menu-copy">Socken, Unterhosen und Krawatten?<br>Hol lieber die zwei rosa Weihnachtsretter.</p></div>
+        <div class="start-actions"><button id="start-button" class="primary-button"><span>Los geht’s</span><span aria-hidden="true">→</span></button></div>
+      </section>
+      <section id="gameover-screen" class="menu-card gameover-screen" aria-label="Keine Herzen mehr" hidden>
+        <span class="menu-kicker">OH NEIN. NUR LANGWEILIGE GESCHENKE.</span><span class="lost-hearts" aria-hidden="true">♡ ♡ ♡</span>
+        <h2>Weihnachten<br>braucht dich noch.</h2><p class="menu-copy" id="retry-detail">Deine Packungen bleiben bei dir.</p>
+        <button id="retry" class="primary-button">Noch ein Versuch</button>
+      </section>
+      <section id="win-screen" class="win-screen" aria-label="Gerettete Manner-Geschenkpackungen" hidden>
+        <span class="menu-kicker">DIE GUTEN GESCHENKE HABEN GEWONNEN</span><h2>Weihnachten gerettet.<br>Socken nächstes Jahr.</h2>
+        <div class="win-products">
+          <a id="product-link-eight" class="win-product" href="https://www.manner.com/de-at/sortiment/winter-weihnachten/manner-original-neapolitaner-8er-geschenkpackung-weihnachtsfest/" target="_blank" rel="noopener noreferrer"><div class="win-packshot"><img id="win-eight-image" src="./assets/products/eight-packshot.png" alt="8er Weihnachtsfest, Packungsfront"></div><strong>8er</strong><b>Weihnachtsfest</b><span>Packung ansehen ↗</span></a>
+          <a id="product-link-eighteen" class="win-product" href="https://www.manner.com/de-at/sortiment/winter-weihnachten/manner-original-neapolitaner-18er-geschenkpackung-frohe-weihnachten/" target="_blank" rel="noopener noreferrer"><div class="win-packshot"><img id="win-eighteen-image" src="./assets/products/eighteen-packshot.png" alt="18er Frohe Weihnachten, Packungsfront"></div><strong>18er</strong><b>Frohe Weihnachten</b><span>Packung ansehen ↗</span></a>
+        </div><p id="win-savings" class="win-savings" hidden>Und sogar +0,01 € Zinsen. Frohes Fest.</p>
+      </section>
+      <footer class="game-footer">
+        <div class="touch-controls" id="touch-controls" role="group" aria-label="Spielsteuerung"><div class="run-controls"><button id="left" class="touch-button" data-action="left" aria-label="Links laufen"><span aria-hidden="true">←</span><b>Links</b></button><button id="right" class="touch-button" data-action="right" aria-label="Rechts laufen"><span aria-hidden="true">→</span><b>Rechts</b></button></div><button id="jump" class="touch-button jump-button" data-action="jump" aria-label="Springen"><span aria-hidden="true">↟</span><b>Springen</b></button></div>
+        <button id="restart" class="primary-button" hidden><span>Nochmal spielen</span><span aria-hidden="true">↻</span></button>
+      </footer>
+    </section>
+    <aside class="right-note" data-capture-hide><span class="tiny-star" aria-hidden="true">✦</span><p>Langweilige Geschenke?<br>Nicht dieses Weihnachten.</p><button id="capture-toggle" class="text-button" aria-pressed="false">▣ Aufnahmemodus</button><span class="capture-note">9:16 · DREI HERZEN FÜR DIE MISSION</span><p class="sound-note">Retro-Sound ab Spielstart.<br>Am Lautsprecher umschalten.</p><span class="fullscreen-hint"><kbd>F</kbd> Vollbild</span></aside>
+  </main>
+  <noscript>Bitte aktiviere JavaScript, um Weihnachten zu retten.</noscript>
+</body>
+</html>

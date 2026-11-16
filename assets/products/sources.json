@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-11-16",
+  "usage": "Privater Kampagnenprototyp; Originalpackshots dienen als visuelle Referenz und ruhige Produktansicht.",
+  "pixelSprites": {
+    "method": "Eigene Pixelzeichnungen aus geometrischen Formen nach visueller Prüfung der verlinkten Original-Packshots; keine heruntergerechneten Fotos.",
+    "generator": "draw-sprites.py",
+    "size": {"width": 64, "height": 64},
+    "transparent": true,
+    "orientation": "front-facing"
+  },
+  "eight": {
+    "name": "Manner Original Neapolitaner 8er Geschenkpackung Weihnachtsfest",
+    "size": "8er",
+    "status": "VERIFIED",
+    "placeholder": false,
+    "pageUrl": "https://www.manner.com/de-at/sortiment/winter-weihnachten/manner-original-neapolitaner-8er-geschenkpackung-weihnachtsfest/",
+    "imageUrl": "https://www.manner.com/de-at/wp-content/uploads/sites/4/bis-images/4382/1711-8er-geschenkspackungen-weihnachten-geschenk-streifen-1180x9999.png",
+    "verification": "Das Hero-Bild der exakt benannten Produktseite trägt alt='Original Neapolitaner 8er Geschenk Weihnachtsfest'. Lokal heruntergeladen und visuell geprüft.",
+    "motif": "Weiße Front mit roten und schmalen grünen Diagonalstreifen, rotes Geschenkband und rote Schleife, Tannenzweig mit Zapfen in der Mitte, rosa Manner-Feld rechts oben. Silberne Kanten, 8x rechts unten.",
+    "sprite": "eight-sprite.png",
+    "packshot": "eight-packshot.png",
+    "packshotDimensions": {"width": 1000, "height": 1000},
+    "missingReference": null
+  },
+  "eighteen": {
+    "name": "Manner Original Neapolitaner 18er Geschenkpackung Frohe Weihnachten",
+    "size": "18er",
+    "status": "VERIFIED",
+    "placeholder": false,
+    "pageUrl": "https://www.manner.com/de-at/sortiment/winter-weihnachten/manner-original-neapolitaner-18er-geschenkpackung-frohe-weihnachten/",
+    "imageUrl": "https://www.manner.com/de-at/wp-content/uploads/sites/4/bis-images/4383/1700-18er-neapolitaner-weihnachten-vintage-papier-blau-1180x9999.png",
+    "verification": "Das Hero-Bild der exakt benannten Produktseite trägt alt='Original Neapolitaner 18er Geschenk Frohe Weihnachten'. Lokal heruntergeladen und visuell geprüft.",
+    "motif": "Petrolblaues Vintage-Geschenkpapier mit goldenen Tannenzweigen, rosa/goldenen/hellblauen Christbaumkugeln, weiße Karte mit goldener Schleife, rosa Manner-Feld rechts oben. Silberne Kanten, 18x rechts unten.",
+    "sprite": "eighteen-sprite.png",
+    "packshot": "eighteen-packshot.png",
+    "packshotDimensions": {"width": 1000, "height": 1000},
+    "missingReference": null
+  }
+}

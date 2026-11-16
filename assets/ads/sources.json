@@ -1,0 +1,10 @@
+{
+  "source": "Four screenshots supplied by the user on 2026-11-16; copied locally without image modification.",
+  "usage": "Background advertising in the private Manner campaign game prototype.",
+  "ads": [
+    {"file":"fairtrade-kakao.png","original":"Screenshot 2026-11-16 at 11.22.15.png","text":"MIT FAIRTRADE KAKAO","width":747,"height":436},
+    {"file":"roestung-wien.png","original":"Screenshot 2026-11-16 at 11.22.18.png","text":"HAUSEIGENE RÖSTUNG IN WIEN","width":855,"height":401},
+    {"file":"ohne-gehaertete-fette.png","original":"Screenshot 2026-11-16 at 11.22.21.png","text":"OHNE GEHÄRTETE FETTE","width":772,"height":414},
+    {"file":"ohne-zusatzstoffe.png","original":"Screenshot 2026-11-16 at 11.22.24.png","text":"OHNE KÜNSTLICHE ZUSATZSTOFFE","width":973,"height":396}
+  ]
+}
